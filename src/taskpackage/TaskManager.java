@@ -34,6 +34,9 @@ public class TaskManager {
 			{
 				listTask();
 			}
+			else if(choice == 3){
+				System.exit(0);
+			}
 			else
 			{
 				System.out.println("Option does not exist");
@@ -44,7 +47,7 @@ public class TaskManager {
 		}
 		
 		}
-		while(choice != 1 || choice != 2);
+		while(choice != 1 || choice != 2 || choice != 3);
 		
 	}
 	
@@ -54,6 +57,7 @@ public class TaskManager {
 		System.out.println("Please enter your choice");
 		System.out.println("1. Add new task");
 		System.out.println("2. List tasks");
+		System.out.println("3. Quit");
 		
 	}
 	
