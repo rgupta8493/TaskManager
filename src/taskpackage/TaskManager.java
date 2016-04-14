@@ -85,20 +85,30 @@ public class TaskManager {
 		{
 			System.out.println(i + 1 + "." + " " + taskList.get(i).getDescription() + "\n");
 		}
-		
+		System.out.println("Enter id to delete or write 0 to exit");
 		String choice = readTask();
+		if(choice.equals("0") | taskList.size() == 0)
+		{
+			menu();
+		}
+		else
+		{
 		try
 		{
 			int selected = Integer.parseInt(choice);	
 			selected--;
-			while(selected < 0 || selected > taskList.size())
+			while(selected < 0 || selected >= taskList.size())
 			{
 				System.out.println("Not an valid id");
-				selected = Integer.parseInt(choice);
+				String text = readTask();
+				selected = Integer.parseInt(text);
+				selected--;
 			}
 			
 			taskList.remove(selected);
 			System.out.println("Task removed");
+			screenSeparator();
+			listTask();
 			
 		}
 		
@@ -106,7 +116,7 @@ public class TaskManager {
 		{
 			System.out.println("Not a valid number");
 		}
-		
+		}
 	}
 
 	
