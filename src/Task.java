@@ -1,5 +1,3 @@
-package taskpackage;
-
 public class Task {
 	
 	private int id;
